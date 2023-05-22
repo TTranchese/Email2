@@ -26,7 +26,7 @@ public class MailService {
 				+ "<h2>You have a new message: </h2>"
 				+ "<img src='https://assets.gadgets360cdn.com/img/crypto/dogecoin-og-logo.png' alt='Alternative text' height='200'>"
 				+ "<h3>" + text + "</h3>";
-		Content content = new Content("text/html", text);
+		Content content = new Content("text/html", formattedText);
 		Mail mail = new Mail(emailSender, subject, emailReceiver, content);
 		SendGrid sendGrid = new SendGrid(environment.getProperty("spring.sendgrid.api-key"));
 		Request request = new Request();
